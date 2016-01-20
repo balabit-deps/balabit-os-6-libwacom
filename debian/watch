@@ -1,0 +1,4 @@
+#git=git://git.code.sf.net/p/linuxwacom/libwacom
+version=3
+opts=dversionmangle=s/\+dfsg\d*$// \
+http://sf.net/linuxwacom/libwacom-([\d\.]*)\.tar\.bz2
