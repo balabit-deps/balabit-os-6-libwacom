@@ -8,7 +8,8 @@
 #  G  H  I
 #  J  K  L
 #  M  N  O
-#  P  Q  R
+#     P
+#  Q     R
 
 [Device]
 Name=Wacom ExpressKey Remote
@@ -21,14 +22,13 @@ Stylus=false
 Ring=true
 NumStrips=0
 Buttons=18
-#StatusLEDs=Ring
+StatusLEDs=Ring
 
 [Buttons]
-Left=C;A;B;F;G;J;M;N;P;Q
-Right=D;E;I;L;H;K;O;R
+Left=A;B;C;D;E;F;G;H;I;J;K;L;M;N;O;P;Q;R
 
 #Note that though this device has 3 ring modes
 #this mode selection does not function the same
 #as previous devices. The EKR's mode is read-only.
-#RingNumModes=3
+RingNumModes=3
 Ring=A

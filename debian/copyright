@@ -2,7 +2,7 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: libwacom
 Source: http://cgit.freedesktop.org/~whot/libwacom/
 Files-Excluded:
- doc/html/
+ doc/html
 
 Files: *
 Copyright: 2011, Red Hat, Inc.

@@ -22,6 +22,7 @@ libwacom.so.2 libwacom2 #MINVER#
  libwacom_get_name@Base 0.3
  libwacom_get_num_buttons@Base 0.1
  libwacom_get_num_strips@Base 0.3
+ libwacom_get_paired_device@Base 0.22
  libwacom_get_product_id@Base 0.1
  libwacom_get_ring2_num_modes@Base 0.3
  libwacom_get_ring_num_modes@Base 0.3
@@ -38,11 +39,13 @@ libwacom.so.2 libwacom2 #MINVER#
  libwacom_is_builtin@Base 0.1
  libwacom_is_reversible@Base 0.1
  libwacom_list_devices_from_database@Base 0.4
+ libwacom_match_destroy@Base 0.22
  libwacom_match_get_bustype@Base 0.5
  libwacom_match_get_match_string@Base 0.5
  libwacom_match_get_name@Base 0.15
  libwacom_match_get_product_id@Base 0.5
  libwacom_match_get_vendor_id@Base 0.5
+ libwacom_match_new@Base 0.22
  libwacom_new_from_name@Base 0.1
  libwacom_new_from_path@Base 0.1
  libwacom_new_from_usbid@Base 0.1
