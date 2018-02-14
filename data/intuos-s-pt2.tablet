@@ -39,13 +39,13 @@ DeviceMatch=usb:056a:033c
 Class=Intuos
 Width=6
 Height=4
-Layout=intuos-s-pt.svg
+Layout=intuos-s-pt2.svg
 IntegratedIn=
 Styli=0x8e2;
 
 [Features]
 Stylus=true
-Reversible=true
+Reversible=false
 Touch=true
 Buttons=4
 TouchSwitch=true

@@ -175,6 +175,7 @@ ECHO_T = @ECHO_T@
 EGREP = @EGREP@
 EXEEXT = @EXEEXT@
 FGREP = @FGREP@
+GIT = @GIT@
 GLIB_236_CFLAGS = @GLIB_236_CFLAGS@
 GLIB_236_LIBS = @GLIB_236_LIBS@
 GLIB_CFLAGS = @GLIB_CFLAGS@
@@ -280,7 +281,8 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 libwacomlayoutsdir = $(datadir)/libwacom/layouts
-dist_libwacomlayouts_DATA = $(shell find $(top_srcdir)/data/layouts -name "*.svg" -printf "%P\n")
+layouts = $(shell find $(top_srcdir)/data/layouts -name "*.svg" -printf "%P\n")
+dist_libwacomlayouts_DATA = $(layouts)
 EXTRA_DIST = README
 all: all-am
 
@@ -498,6 +500,21 @@ uninstall-am: uninstall-dist_libwacomlayoutsDATA
 
 .PRECIOUS: Makefile
 
+
+check:
+	@for file in $(layouts); do \
+		$(GREP) -q "$$file" $(top_srcdir)/data/*.tablet || (\
+			echo "ERROR: Layout $$file is not referenced" && test); \
+		rc="$$(($$rc + $$?))"; \
+	done && test 0 -eq $$rc;
+	@(export GIT_DIR="$(top_srcdir)/.git"; \
+	if $(GIT) ls-files >& /dev/null; then \
+		for file in $(layouts); do \
+			$(GIT) ls-files --error-unmatch "data/layouts/$$file" &> /dev/null || ( \
+			echo "ERROR: File $$file is not in git" && test); \
+		rc="$$(($$rc + $$?))"; \
+		done && test 0 -eq $$rc; \
+	fi)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
